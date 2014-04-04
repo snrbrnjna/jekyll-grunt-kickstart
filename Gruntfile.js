@@ -83,6 +83,35 @@ module.exports = function (grunt) {
         bundleExec: true
       },
       build: {}
+    },
+    rsync: {
+      options: {
+        exclude: ['.git*'],
+        recursive: true,
+        src: '_site/',
+        syncDest: true,
+        args: [
+          '--verbose',
+          '-rtzh',
+          '--progress',
+          '--perms',
+          '--no-g',
+          '--chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r'
+        ]
+      },
+      live: {
+        options: {
+          host: 'patcheko@brnjna.net',
+          dest: '/var/www/virtual/patcheko/mw.brnjna.net',
+        }
+      },
+      tunneled: {
+        options: {
+          host: 'patcheko@localhost',
+          port: '49022',
+          dest: '/var/www/virtual/patcheko/mw.brnjna.net',
+        }
+      }
     }
   });
 
