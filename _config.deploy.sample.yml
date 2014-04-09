@@ -1,0 +1,9 @@
+deploy:
+  live:
+    host: user@host.tld
+    dest: /path/to/webroot
+    port: 22
+  tunneled:
+    host: user@localhost
+    dest: /path/to/webroot
+    port: 66666

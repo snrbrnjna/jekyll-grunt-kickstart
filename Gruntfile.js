@@ -1,19 +1,19 @@
 'use strict';
 
+var _ = require('lodash');
+
 module.exports = function (grunt) {
   // show elapsed time at the end
   require('time-grunt')(grunt);
   // load all grunt tasks
   require('load-grunt-tasks')(grunt);
 
-  // configurable paths
-  var cfg = {
-    dist: '_site'
-  };
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    cfg: cfg,
+    cfg: _.merge(
+      grunt.file.readYAML('_config.yml'),
+      grunt.file.readYAML('_config.deploy.yml')
+    ),
     watch: {
       dev: {
         options: {
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         hostname: '0.0.0.0',
-        base: '<%= cfg.dist %>',
+        base: '<%= cfg.destination %>',
         open: true
       },
       server: {
@@ -59,28 +59,29 @@ module.exports = function (grunt) {
               'bower_components/normalize.css/normalize.css',
               'bower_components/jquery/jquery.*',
             ],
-            dest: '<%= cfg.dist %>/'
+            dest: '<%= cfg.destination %>/'
           }
         ]
       }
     },
     useminPrepare: {
       options: {
-        dest: '<%= cfg.dist %>',
-        root: '.' // else the sources are searched in cfg.dist folder
+        dest: '<%= cfg.destination %>',
+        root: '.' // else the sources are searched in cfg.destination folder
       },
-      html: '<%= cfg.dist %>/index.html',
+      html: '<%= cfg.destination %>/index.html',
     },
     usemin: {
       options: {
-        assetsDirs: '<%= cfg.dist %>',
+        assetsDirs: '<%= cfg.destination %>',
       },
-      html: ['<%= cfg.dist %>/**/*.html'],
-      css: ['<%= cfg.dist %>/css/**/*.css']
+      html: ['<%= cfg.destination %>/**/*.html'],
+      css: ['<%= cfg.destination %>/css/**/*.css']
     },
     jekyll: {
       options: {
-        bundleExec: true
+        bundleExec: true,
+        config: '_config.yml,_config.deploy.yml'
       },
       build: {}
     },
@@ -101,15 +102,15 @@ module.exports = function (grunt) {
       },
       live: {
         options: {
-          host: 'patcheko@brnjna.net',
-          dest: '/var/www/virtual/patcheko/mw.brnjna.net',
+          host: '<%= cfg.deploy.live.host %>',
+          dest: '<%= cfg.deploy.live.dest %>',
         }
       },
       tunneled: {
         options: {
-          host: 'patcheko@localhost',
-          port: '49022',
-          dest: '/var/www/virtual/patcheko/mw.brnjna.net',
+          host: '<%= cfg.deploy.tunneled.host %>',
+          port: '<%= cfg.deploy.tunneled.port %>',
+          dest: '<%= cfg.deploy.tunneled.dest %>',
         }
       }
     }
@@ -139,6 +140,17 @@ module.exports = function (grunt) {
       'cssmin',
       'uglify',
       'usemin'
+    ]);
+  });
+
+  grunt.registerTask('deploy', function (target) {
+    if (target === undefined) {
+      target = 'live';
+    }
+
+    grunt.task.run([
+      'build',
+      'rsync:' + target
     ]);
   });
 
