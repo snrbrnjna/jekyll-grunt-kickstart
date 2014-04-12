@@ -58,7 +58,7 @@ module.exports = function (grunt) {
           {
             src: [
               'bower_components/normalize.css/normalize.css',
-              'bower_components/jquery/jquery.*',
+              'bower_components/jquery/dist/jquery.*',
             ],
             dest: '<%= cfg.destination %>/'
           }
