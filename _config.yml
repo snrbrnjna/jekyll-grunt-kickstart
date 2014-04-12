@@ -1,4 +1,5 @@
-name: MAIWOLF PHOTOGRAPHY
+name: Jekyll-Grunt-Kickass
+description: "a template for jekyll sites developed with the help of grunt and bower"
 markdown: redcarpet
 pygments: true
 

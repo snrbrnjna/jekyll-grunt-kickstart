@@ -1,14 +1,14 @@
 {
-  "name": "maiwolf.com",
+  "name": "jekyll-grunt-kickass",
   "version": "0.0.1",
-  "description": "maiwolf photography - photographers for advertising, fashion, people, portrait and beauty.",
+  "description": "a template for jekyll sites developed with the help of grunt & bower",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "maiwolf.com",
-    "photographers",
-    "galleryjs"
+    "jekyll",
+    "grunt",
+    "bower"
   ],
   "author": "Snr Brnjna <snr@brnjna.net>",
   "devDependencies": {
