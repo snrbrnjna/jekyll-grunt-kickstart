@@ -1,3 +1,6 @@
+---
+layout: page
+---
 # Jekyll Grunt Kickass
 
 A [h5bp](http://html5boilerplate.com/) equipped scaffold for developing a Jekyll website with [grunt](http://gruntjs.com/) and [bower](http://bower.io/).
@@ -10,13 +13,13 @@ A [h5bp](http://html5boilerplate.com/) equipped scaffold for developing a Jekyll
 - Develop your app and commit to your repo.
 
 ### Grunt Tasks
-- __serve__
+- ``serve``  
   build dev version (jekyll & copy src) and serve with livereload on any change
-- __serve:dist__
+- ``serve:dist``  
   build dist version and serve it without livereload
-- __build__
-  build dist version (jekyll & usemin)
-- __deploy__
+- ``build``  
+  build dist version (jekyll & usemin).
+- ``deploy:tunneled``  
   build und rsync zu in ``_config.deploy.yml`` konfiguriertem Ziel
-- __deploy:tunneled__
+- ``deploy:tunneled``  
   build und rsync via tunnel.
