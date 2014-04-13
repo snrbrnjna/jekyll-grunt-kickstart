@@ -124,38 +124,38 @@ nav ul {
 
 /*****************************************************************************/
 /*
-/* Posts
+/* Post Content
 /*
 /*****************************************************************************/
 
+.content {
+  line-height: 1.3em;
+}
+
 /* standard */
-.post pre {
+.content pre {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4em;
 }
 
-.post ul, .post ol {
-  margin-left: 1.35em;
-}
-
-.post code {
+.content code {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .2em;
 }
 
-.post pre code {
+.content pre code {
   border: none;
 }
 
 /* terminal */
-.post pre.terminal {
+.content pre.terminal {
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
 }
 
-.post pre.terminal code {
+.content pre.terminal code {
   background-color: #333;
 }
