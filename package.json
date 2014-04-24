@@ -17,7 +17,7 @@
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-jekyll": "git://github.com/snrbrnjna/grunt-jekyll.git#20ad77519dada10ba6adc5c2fd23e10a295a45d7",
+    "grunt-jekyll": "git://github.com/snrbrnjna/grunt-jekyll.git#0f56474693a479b753e557ad8ee3d5e80a49c871",
     "time-grunt": "~0.3.1",
     "load-grunt-tasks": "~0.4.0",
     "grunt-contrib-watch": "~0.6.1",
