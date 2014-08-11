@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 { margin: 1em 0; font-size: 2em;}
 h2 { margin: .67em 0; font-size: 1.8em;}
 h3 { margin: .56em 0; font-size: 1.3em;}
+h4 { margin: 1em 0 .36em; font-size: 1em;}
 
 p { margin: 1em 0; }
 
