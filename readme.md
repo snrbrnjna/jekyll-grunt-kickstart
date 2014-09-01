@@ -6,7 +6,9 @@ A [h5bp](http://html5boilerplate.com/) equipped scaffold for developing a Jekyll
 
 - Clone this repo
 - Rename remote origin to jekyll-grunt-kickass:  
-``git remote rename master jekyll-grunt-kickass`` 
+``git remote rename origin jekyll-grunt-kickass`` 
+- Rename master branch to jekyll-grunt-kickass:  
+``git branch -m master jekyll-grunt-kickass``
 - Checkout new master branch for developing your site with this toolset:  
 ``git checkout -b master``
 - Develop your app and commit to your repo.
