@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     cfg: _.merge(
       grunt.file.readYAML('_config.yml'),
-      grunt.file.readYAML('_config.deploy.yml')
+      grunt.file.readYAML('_config.local.yml')
     ),
     watch: {
       dev: {
@@ -23,6 +23,7 @@ module.exports = function (grunt) {
           '*.{html,md,markdown}',
           '_includes/*.html',
           '_layouts/*.html',
+          '_data/*.{json,yml,yaml}',
           '_posts/**/*.{markdown,md}',
           '_plugins/**/*.rb',
           '_includes/**/*.{html}',
