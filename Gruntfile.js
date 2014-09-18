@@ -83,7 +83,7 @@ module.exports = function (grunt) {
     jekyll: {
       options: {
         bundleExec: true,
-        config: '_config.yml,_config.deploy.yml'
+        config: '_config.yml,_config.local.yml'
       },
       build: {}
     },
